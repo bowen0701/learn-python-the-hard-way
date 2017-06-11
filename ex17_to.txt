@@ -1,0 +1,3 @@
+I aspire to apply statistical machine learning to
+solve problems, extract insights, and build product.
+I love data science.
