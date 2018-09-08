@@ -3,15 +3,14 @@
 from sys import exit
 from random import randint
 
-class Scene(object):
 
+class Scene(object):
     def enter(self):
         print 'This scene is not yet configured. Subclass it and implement enter().'
             exit(1)
 
 
 class Engine(object):
-
     def __init__(self, scene_map):
         self.scene_map = scene_map
 
@@ -21,10 +20,10 @@ class Engine(object):
         while True:
             print '\n--------'
             next_scene_name = current_scene.enter()
-            current_scene = self.scene_map.next_scene(nex_scene_name)
+            current_scene = self.scene_map.next_scene(next_scene_name)
+
 
 class Death(Scene):
-
     quips = [
         'You died. You kinda suck at this.',
         'Your mom would be proud... if she were smarter.',
@@ -36,8 +35,8 @@ class Death(Scene):
         print Death.quips[randinit(0, len(self.quips)-1)]
         exit(1)
 
-class CentralCorridor(Scene):
 
+class CentralCorridor(Scene):
     def enter(self):
         print 'The Gothons of Planet Percal #25 have invaded you ship and destroyed'
         print 'your entire crew. You are the last surviving member and your last'
@@ -70,25 +69,22 @@ class CentralCorridor(Scene):
             return 'death' 
 
 
-
 class LaserWeaponArmory(Scene):
-
     def enter(self):
-        pass
+        print("You do a dive roll into the Weapon Armony, crouch and scan the room")
+        print("for more Gothons that might be hiding. It's dead quiet, too quiet.")
+
 
 class TheBridge(Scene):
-
     def enter(self):
         pass
 
 class EscapePod(Scene):
-
     def enter(self):
         pass
 
 
 class Map(object):
-
     def __init__(self, start_scene):
         pass
 
